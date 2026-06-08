@@ -1,0 +1,6 @@
+DATABASE_URL="postgresql://postgres:123456@localhost:5432/surat_menyurat"
+JWT_SECRET="supersecretkeygantidenganrandomstring"
+CLOUDINARY_CLOUD_NAME="dysxdnxv6"
+CLOUDINARY_API_KEY="849329169249953"
+CLOUDINARY_API_SECRET="0IRAFKxaCqFK8CF6j1LtE7XVHrk"
+PORT=5000

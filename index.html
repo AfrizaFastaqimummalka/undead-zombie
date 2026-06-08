@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Undead Kingdom</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; touch-action: none; }
+    body { background: #000; overflow: hidden; font-family: monospace; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+    canvas { display: block; touch-action: none; }
+    body.locked { cursor: none; }
+
+    #volumeBar {
+      position: fixed; top: 10px; right: 10px; z-index: 30;
+      background: rgba(0,0,0,0.55); border-radius: 8px; padding: 8px 14px;
+      color: #ccc; font-size: 13px; pointer-events: none; opacity: 0; transition: opacity 0.3s;
+    }
+    #volumeBar.visible { opacity: 1; pointer-events: auto; }
+    #volumeBar label { display: block; margin-bottom: 4px; }
+    #musicVol { width: 120px; accent-color: #ff4444; }
+
+    #camMode {
+      position: fixed; bottom: 8px; left: 50%; transform: translateX(-50%); z-index: 20;
+      color: rgba(255,255,255,0.45); font-family: monospace; font-size: 11px;
+      pointer-events: none; letter-spacing: 3px; text-transform: uppercase;
+    }
+
+    #rainIndicator {
+      position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 20;
+      color: #aaddff; font-size: 13px; pointer-events: none;
+      opacity: 0; transition: opacity 0.5s; text-shadow: 0 0 8px #88ccff;
+    }
+    #rainIndicator.visible { opacity: 1; }
+  </style>
+</head>
+<body>
+
+<div id="volumeBar">
+  <label>🎵 Music Volume</label>
+  <input type="range" id="musicVol" min="0" max="100" value="35" />
+</div>
+
+<div id="camMode">FPP</div>
+<div id="rainIndicator">🌧️ Rain ON</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+  }
+}
+</script>
+
+<script type="module">
+  import { startGame, restart, setBrightness } from './src/game.js';
+  import { setMusicVolume } from './src/audio.js';
+  import { state } from './src/state.js';
+
+  // Volume slider
+  const volSlider = document.getElementById('musicVol');
+  volSlider.addEventListener('input', () => {
+    setMusicVolume(parseInt(volSlider.value) / 100);
+  });
+
+  // Pointer lock → volume slider
+  document.addEventListener('pointerlockchange', () => {
+    const locked = !!document.pointerLockElement;
+    document.body.classList.toggle('locked', locked);
+    document.getElementById('volumeBar').classList.toggle('visible', !locked);
+  });
+
+  // Rain indicator
+  function updateIndicators() {
+    document.getElementById('rainIndicator').classList.toggle('visible', state.rain.active);
+    requestAnimationFrame(updateIndicators);
+  }
+  updateIndicators();
+
+  // Expose ke HTML / UI
+  window.startGame    = startGame;
+  window.restart      = restart;
+  window.setBrightness = setBrightness;
+  window.setMusicVolume = setMusicVolume;
+
+  // Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(r => console.log('SW registered:', r.scope))
+        .catch(e => console.log('SW failed:', e));
+    });
+  }
+</script>
+</body>
+</html>

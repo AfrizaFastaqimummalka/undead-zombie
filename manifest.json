@@ -1,0 +1,14 @@
+{
+  "name": "Undead Kingdom",
+  "short_name": "Undead",
+  "description": "3D Zombie Survival FPS",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "background_color": "#000000",
+  "theme_color": "#87CEEB",
+  "orientation": "landscape",
+  "icons": [
+    { "src": "public/icons/rifle.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "public/icons/rifle.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
