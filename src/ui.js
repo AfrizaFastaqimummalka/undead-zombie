@@ -765,7 +765,7 @@ function initMenu() {
       align-items:center;justify-content:center;flex-direction:column;
       background:rgba(0,0,0,0.82);cursor:default;overflow:hidden;`;
     ts.innerHTML = `
-      <video id="menuBgVideo" autoplay loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:0.6;">
+      <video id="menuBgVideo" autoplay loop muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:0.6;">
         <source src="../public/menu_bg.mp4" type="video/mp4">
       </video>
       <div style="font-size:62px;font-weight:700;font-family:'Rajdhani',monospace;
@@ -778,9 +778,24 @@ function initMenu() {
         color:#ffd000;margin-bottom:48px;letter-spacing:2px;z-index:1;"></div>
       
       <div id="menuButtons" style="display:flex;flex-direction:column;gap:16px;z-index:1;min-width:260px;"></div>
+      <div id="unmuteText" style="position:absolute;bottom:20px;color:rgba(255,255,255,0.5);font-size:12px;font-family:monospace;z-index:1;pointer-events:none;">(Click anywhere to enable sound)</div>
     `;
     
     document.body.appendChild(ts);
+
+    // Unmute video on first interaction (Browser policy requires interaction to play audio)
+    const unmuteHandler = () => {
+      const vid = document.getElementById('menuBgVideo');
+      if (vid && ts.style.display !== 'none') {
+        vid.muted = false;
+      }
+      const uText = document.getElementById('unmuteText');
+      if (uText) uText.style.display = 'none';
+      document.removeEventListener('click', unmuteHandler);
+      document.removeEventListener('touchstart', unmuteHandler);
+    };
+    document.addEventListener('click', unmuteHandler);
+    document.addEventListener('touchstart', unmuteHandler);
 
     const btnContainer = document.getElementById('menuButtons');
     
