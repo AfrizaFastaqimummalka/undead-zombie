@@ -8,11 +8,11 @@ const audioBuffers = {};
 export async function loadAudioFiles() {
   if (!audioCtx) return;
   const files = {
-    pistol:        '../public/sounds/pistol.mp3',
-    rifle:         '../public/sounds/rifle.mp3',
-    smg:           '../public/sounds/smg.mp3',
-    katana_whoosh: '../public/sounds/katana_whoosh.mp3',
-    katana_hit:    '../public/sounds/katana_hit.mp3',
+    pistol:        '/public/sounds/pistol.mp3',
+    rifle:         '/public/sounds/rifle.mp3',
+    smg:           '/public/sounds/smg.mp3',
+    katana_whoosh: '/public/sounds/katana_whoosh.mp3',
+    katana_hit:    '/public/sounds/katana_hit.mp3',
   };
   for (const [key, path] of Object.entries(files)) {
     try {
