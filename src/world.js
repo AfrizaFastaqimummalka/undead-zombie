@@ -135,7 +135,7 @@ function setupSky() {
 
   // HDR sky — load di semua device
   import('https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/loaders/RGBELoader.js')
-    .then(({ RGBELoader }) => new RGBELoader().loadAsync('/public/models/sky.hdr'))
+    .then(({ RGBELoader }) => new RGBELoader().loadAsync('https://ffnqefdbc21kaq5a.public.blob.vercel-storage.com/sky.hdr'))
     .then(tex => {
       tex.mapping = THREE.EquirectangularReflectionMapping;
       scene.background = tex;
@@ -159,14 +159,14 @@ const SKIP_NAMES = [
 
 async function tryLoadGLBMap() {
   try {
-    const res = await fetch('/public/models/map.glb', { method: 'HEAD' });
+    const res = await fetch('https://ffnqefdbc21kaq5a.public.blob.vercel-storage.com/map.glb', { method: 'HEAD' });
     if (!res.ok) return false;
 
     const { GLTFLoader } = await import(
       'https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/loaders/GLTFLoader.js'
     );
 
-    const gltf     = await new GLTFLoader().loadAsync('/public/models/map.glb');
+    const gltf     = await new GLTFLoader().loadAsync('https://ffnqefdbc21kaq5a.public.blob.vercel-storage.com/map.glb');
     const mapScene = gltf.scene;
 
     // Pass 1: fix material + skip mesh tidak perlu

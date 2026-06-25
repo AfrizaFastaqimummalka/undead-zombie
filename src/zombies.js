@@ -25,7 +25,7 @@ const glbInstances = new Map();
 // ─────────────────────────────────────────────────────
 async function loadZombieGLB() {
   try {
-    const headRes = await fetch('/public/models/zombie.glb', { method: 'HEAD' });
+    const headRes = await fetch('https://ffnqefdbc21kaq5a.public.blob.vercel-storage.com/zombie.glb', { method: 'HEAD' });
     if (!headRes.ok) throw new Error('File not found: models/zombie.glb');
 
     const [{ GLTFLoader }, skeletonMod] = await Promise.all([
@@ -39,7 +39,7 @@ async function loadZombieGLB() {
     if (!cloneFn) throw new Error('SkeletonUtils.clone not found in module: ' + Object.keys(skeletonMod).join(', '));
     glbSkeleton = { clone: cloneFn };
 
-    const gltf  = await new GLTFLoader().loadAsync('/public/models/zombie.glb');
+    const gltf  = await new GLTFLoader().loadAsync('https://ffnqefdbc21kaq5a.public.blob.vercel-storage.com/zombie.glb');
     const model = gltf.scene;
 
     // Sembunyikan shadow plane Sketchfab (Plane_0)
