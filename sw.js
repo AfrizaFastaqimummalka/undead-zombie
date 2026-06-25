@@ -1,5 +1,5 @@
 // sw.js — Service Worker
-const CACHE_NAME = 'undead-kingdom-v3';
+const CACHE_NAME = 'undead-kingdom-v4';
 const urlsToCache = [
   './',
   './index.html',

@@ -766,7 +766,7 @@ function initMenu() {
       background:rgba(0,0,0,0.82);cursor:default;overflow:hidden;`;
     ts.innerHTML = `
       <video id="menuBgVideo" autoplay loop muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:0.6;">
-        <source src="/public/menu_bg.mp4" type="video/mp4">
+        <source src="https://ffnqefdbc21kaq5a.public.blob.vercel-storage.com/menu_bg.mp4" type="video/mp4">
       </video>
       <div style="font-size:62px;font-weight:700;font-family:'Rajdhani',monospace;
         color:#ff4444;text-shadow:0 0 40px rgba(255,0,0,0.5);margin-bottom:6px;letter-spacing:8px;z-index:1;">
