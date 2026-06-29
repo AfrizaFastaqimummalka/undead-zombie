@@ -1,100 +1,182 @@
 # 🧟 Undead Kingdom
 
-A browser-based 3D zombie survival game built with Three.js — featuring first-person shooter mechanics, multiple weapon types, wave-based enemy AI, and full PWA support.
+A browser-based **3D zombie survival game** built with **Three.js**.
+Features first-person shooter mechanics, multiple weapon systems, wave-based zombie AI, and full **Progressive Web App (PWA)** support.
+
+![Undead Kingdom](https://img.shields.io/badge/Game-3D%20Zombie%20Survival-red)
+![Three.js](https://img.shields.io/badge/Engine-Three.js-blue)
+![PWA](https://img.shields.io/badge/Support-PWA-green)
+
+---
 
 ## 🎮 Play Online
 
-> 🚀 **[Play Now on Vercel →]((https://undead-kingdom.vercel.app/))**
+🚀 **Play the game here:**
 
-## 📦 Download Large Assets (Google Drive)
+➡️ https://undead-kingdom.vercel.app/
 
-Beberapa file besar tidak disertakan di repositori GitHub karena melebihi batas ukuran. Silakan unduh dan tempatkan sesuai path berikut:
+---
 
-| File | Ukuran | Path Tujuan | Link |
-|------|--------|-------------|------|
-| `map.glb` | ~30 MB | `public/models/map.glb` | 🔗 [Download]((https://drive.google.com/file/d/1tfwPKQu3OljN60TtLUlUj-_XEIoX6xZK/view?usp=sharing)) |
-| `menu_bg.mp4` | ~4 MB | `public/menu_bg.mp4` | 🔗 [Download](https://drive.google.com/file/d/1PC_887Ng_wQniPxxKfDRe_1QSH-nyjUL/view?usp=sharing)) |
-| `Laporan UAS Grafis.mp4` | ~47 MB | `report/` | 🔗 [Download]((https://drive.google.com/file/d/1M5aSAsA3F3bYpdWeHzZLzzLRWPr5qRrE/view?usp=drive_link)) |
+# 📦 Large Assets Download
 
-> ⚠️ **Catatan:** Tanpa file `map.glb`, game tidak akan bisa dijalankan secara lokal.
+Some large files are not included in the GitHub repository because they exceed GitHub file size limits.
 
-## 🛠️ Setup Lokal
+Download and place the files according to the paths below:
 
-### 1. Clone repositori
+| File                     | Size   | Destination Path        | Download                                                                                          |
+| ------------------------ | ------ | ----------------------- | ------------------------------------------------------------------------------------------------- |
+| `map.glb`                | ~30 MB | `public/models/map.glb` | [Download](https://drive.google.com/file/d/1tfwPKQu3OljN60TtLUlUj-_XEIoX6xZK/view?usp=sharing)    |
+| `menu_bg.mp4`            | ~4 MB  | `public/menu_bg.mp4`    | [Download](https://drive.google.com/file/d/1PC_887Ng_wQniPxxKfDRe_1QSH-nyjUL/view?usp=sharing)    |
+| `Laporan UAS Grafis.mp4` | ~47 MB | `report/`               | [Download](https://drive.google.com/file/d/1M5aSAsA3F3bYpdWeHzZLzzLRWPr5qRrE/view?usp=drive_link) |
+
+⚠️ **Important:**
+Without `map.glb`, the game will not run properly in local mode.
+
+---
+
+# 🛠️ Local Installation
+
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/AfrizaFastaqimummalka/undead-zombie.git
+
 cd undead-zombie
 ```
-### 2. Download file besar
 
-Download file dari tabel di atas, lalu tempatkan sesuai path yang tertera.
+## 2. Download Large Assets
 
-### 3. Jalankan dengan live server
+Download the required files above and put them into the correct folders.
 
-Gunakan ekstensi **Live Server** di VS Code, atau:
+Example:
+
+```
+public/
+ └── models/
+      └── map.glb
+```
+
+---
+
+## 3. Run Local Server
+
+You can use **Live Server extension** in VS Code.
+
+Or run:
+
+### Python
 
 ```bash
-# Menggunakan Python
 python -m http.server 8000
+```
 
-# Menggunakan Node.js (npx)
+### Node.js
+
+```bash
 npx serve .
 ```
 
-Buka browser ke `http://localhost:8000`
-
----
-
-## 🎯 Fitur
-
-- 🔫 **Multi-weapon system** — Pistol, Rifle, SMG, Katana
-- 🧟 **Wave-based zombie AI** — Musuh semakin kuat tiap ronde
-- 🗺️ **3D map** — Environment lengkap dengan GLB model
-- 🎵 **Sound effects** — Suara senjata dan serangan
-- 📱 **PWA Support** — Bisa diinstall sebagai aplikasi
-- 🏆 **Leaderboard & Stats** — Tracking score dan kills
-
----
-
-## 🧰 Teknologi
-
-| Teknologi | Kegunaan |
-|-----------|----------|
-| [Three.js](https://threejs.org/) | 3D rendering engine |
-| [GLTFLoader](https://threejs.org/docs/#examples/en/loaders/GLTFLoader) | Load model 3D (.glb) |
-| HTML5 / CSS3 / Vanilla JS | UI & logika game |
-| PWA (Service Worker) | Offline support |
-| Vercel | Deployment |
-
-## 📁 Struktur Folder
+Open:
 
 ```
-undead-kingdom/
+http://localhost:8000
+```
+
+---
+
+# 🎯 Features
+
+## 🔫 Weapon System
+
+* Pistol
+* Rifle
+* SMG
+* Katana
+
+## 🧟 Zombie AI
+
+* Wave-based enemy spawning
+* Increasing difficulty per round
+* Zombie chasing and attacking system
+
+## 🗺️ 3D Environment
+
+* Full 3D map using `.glb`
+* Real-time rendering with Three.js
+
+## 🎵 Audio System
+
+* Weapon sound effects
+* Attack sounds
+* Background music
+
+## 📱 PWA Support
+
+* Installable as an application
+* Offline support using Service Worker
+
+## 🏆 Game Statistics
+
+* Kill counter
+* Score tracking
+* Leaderboard system
+
+---
+
+# 🧰 Technologies
+
+| Technology         | Usage                 |
+| ------------------ | --------------------- |
+| Three.js           | 3D rendering engine   |
+| GLTFLoader         | Loading `.glb` models |
+| HTML5              | Structure             |
+| CSS3               | Styling               |
+| Vanilla JavaScript | Game logic            |
+| Service Worker     | PWA offline support   |
+| Vercel             | Deployment            |
+
+---
+
+# 📁 Project Structure
+
+```
+undead-zombie/
+
 ├── public/
-│   ├── models/          # 3D models (zombie.glb, sky.hdr, map.glb*)
-│   ├── sounds/          # Audio files
-│   └── menu_bg.mp4*     # Background video menu
+│   ├── models/
+│   │    ├── zombie.glb
+│   │    ├── sky.hdr
+│   │    └── map.glb*
+│   │
+│   ├── sounds/
+│   └── menu_bg.mp4*
+│
 ├── src/
-│   └── ui.js            # Game UI logic
-├── report/              # Laporan UAS
-├── index.html           # Entry point
-├── sw.js                # Service Worker
-└── manifest.json        # PWA manifest
+│   └── ui.js
+│
+├── report/
+│   └── Laporan UAS Grafis.mp4
+│
+├── index.html
+├── sw.js
+└── manifest.json
 
-* File ini tidak ada di repo, download via Google Drive di atas
+
+* Large files are excluded from GitHub.
+Download them from the asset links above.
 ```
 
 ---
 
-## 👤 Author
+# 👤 Author
 
-**Afriza Fastaqimummalka**  
-NIM: 2341053  
+**Afriza Fastaqimummalka**
+NIM: 2341053
+
 UAS — Pemrograman Grafis
 
 ---
 
-## 📄 Lisensi
+# 📄 License
 
-Project ini dibuat untuk keperluan akademik.
+This project was created for academic purposes.
