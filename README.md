@@ -14,7 +14,7 @@ Beberapa file besar tidak disertakan di repositori GitHub karena melebihi batas 
 |------|--------|-------------|------|
 | `map.glb` | ~30 MB | `public/models/map.glb` | 🔗 [Download]([https://drive.google.com/LINK_MAP_GLB](https://drive.google.com/file/d/1tfwPKQu3OljN60TtLUlUj-_XEIoX6xZK/view?usp=sharing)) |
 | `menu_bg.mp4` | ~4 MB | `public/menu_bg.mp4` | 🔗 [Download]([https://drive.google.com/LINK_MENU_BG](https://drive.google.com/file/d/1PC_887Ng_wQniPxxKfDRe_1QSH-nyjUL/view?usp=sharing)) |
-| `Laporan UAS Grafis.mp4` | ~47 MB | `report/` | 🔗 [Download]([https://drive.google.com/LINK_LAPORAN_MP4](https://drive.google.com/file/d/1M5aSAsA3F3bYpdWeHzZLzzLRWPr5qRrE/view?usp=drive_link)) |
+| `Laporan UAS Grafis.mp4` | ~47 MB | `report/` | 🔗 [Download](([https://drive.google.com/LINK_LAPORAN_MP4](https://drive.google.com/file/d/1M5aSAsA3F3bYpdWeHzZLzzLRWPr5qRrE/view?usp=drive_link)) |
 
 > ⚠️ **Catatan:** Tanpa file `map.glb`, game tidak akan bisa dijalankan secara lokal.
 
