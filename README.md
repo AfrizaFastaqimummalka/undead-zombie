@@ -2,15 +2,9 @@
 
 A browser-based 3D zombie survival game built with Three.js — featuring first-person shooter mechanics, multiple weapon types, wave-based enemy AI, and full PWA support.
 
-![Game Preview](public/thumbnail.png)
-
----
-
 ## 🎮 Play Online
 
-> 🚀 **[Play Now on Vercel →](https://undead-zombie.vercel.app)**
-
----
+> 🚀 **[Play Now on Vercel →]([https://undead-zombie.vercel.app](https://undead-kingdom.vercel.app/))**
 
 ## 📦 Download Large Assets (Google Drive)
 
@@ -18,13 +12,11 @@ Beberapa file besar tidak disertakan di repositori GitHub karena melebihi batas 
 
 | File | Ukuran | Path Tujuan | Link |
 |------|--------|-------------|------|
-| `map.glb` | ~30 MB | `public/models/map.glb` | 🔗 [Download](https://drive.google.com/LINK_MAP_GLB) |
-| `menu_bg.mp4` | ~4 MB | `public/menu_bg.mp4` | 🔗 [Download](https://drive.google.com/LINK_MENU_BG) |
-| `Laporan UAS Grafis.mp4` | ~47 MB | `report/` | 🔗 [Download](https://drive.google.com/LINK_LAPORAN_MP4) |
+| `map.glb` | ~30 MB | `public/models/map.glb` | 🔗 [Download]([https://drive.google.com/LINK_MAP_GLB](https://drive.google.com/file/d/1tfwPKQu3OljN60TtLUlUj-_XEIoX6xZK/view?usp=sharing)) |
+| `menu_bg.mp4` | ~4 MB | `public/menu_bg.mp4` | 🔗 [Download]([https://drive.google.com/LINK_MENU_BG](https://drive.google.com/file/d/1PC_887Ng_wQniPxxKfDRe_1QSH-nyjUL/view?usp=sharing)) |
+| `Laporan UAS Grafis.mp4` | ~47 MB | `report/` | 🔗 [Download]([https://drive.google.com/LINK_LAPORAN_MP4](https://drive.google.com/file/d/1M5aSAsA3F3bYpdWeHzZLzzLRWPr5qRrE/view?usp=drive_link)) |
 
 > ⚠️ **Catatan:** Tanpa file `map.glb`, game tidak akan bisa dijalankan secara lokal.
-
----
 
 ## 🛠️ Setup Lokal
 
@@ -34,7 +26,6 @@ Beberapa file besar tidak disertakan di repositori GitHub karena melebihi batas 
 git clone https://github.com/AfrizaFastaqimummalka/undead-zombie.git
 cd undead-zombie
 ```
-
 ### 2. Download file besar
 
 Download file dari tabel di atas, lalu tempatkan sesuai path yang tertera.
@@ -75,8 +66,6 @@ Buka browser ke `http://localhost:8000`
 | HTML5 / CSS3 / Vanilla JS | UI & logika game |
 | PWA (Service Worker) | Offline support |
 | Vercel | Deployment |
-
----
 
 ## 📁 Struktur Folder
 
